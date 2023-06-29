@@ -60,6 +60,9 @@ function read_obj(obj_content, triangle_consumer_factory)
             elseif modlib.text.starts_with(line, "o ") then
                 read_object()
             end
+            if not index then
+                break
+            end
             index, line=iterator(lines, index)
         until not line
     end
